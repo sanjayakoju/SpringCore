@@ -1,0 +1,25 @@
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="vehicle" class="model.Car">
+        <constructor-arg type="String" value="Benz"></constructor-arg>
+        <constructor-arg type="double" value="234235"></constructor-arg>
+    </bean>
+    <bean id="car" class="model.Car">
+        <constructor-arg type="String" value="BMW"></constructor-arg>
+        <constructor-arg type="double" value="123214"></constructor-arg>
+    </bean>
+    <bean id="bike" class="model.Bike">
+<!--        <constructor-arg type="String" value="Yamaha"></constructor-arg>-->
+<!--        <constructor-arg type="double" value="15000"></constructor-arg>-->
+
+        <property name="model" value="Aprilla"></property>
+        <property name="price" value="12000"></property>
+    </bean>
+<!--    <bean id="game" class="model.Game">-->
+<!--        <constructor-arg ref="vehicle"></constructor-arg>-->
+<!--    </bean>-->
+
+</beans>
