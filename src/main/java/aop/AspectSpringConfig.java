@@ -14,7 +14,7 @@ public class AspectSpringConfig {
     }
 
     @Bean
-    public Logger logger() {
-        return new Logger();
+    public AspectLogger logger() {
+        return new AspectLogger();
     }
 }
