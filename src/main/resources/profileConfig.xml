@@ -1,0 +1,20 @@
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+
+  >
+
+    <beans profile="development, default">
+        <bean id="dbService" class="profiling.DbService">
+            <property name="db_url" value="development_db"></property>
+        </bean>
+    </beans>
+
+    <beans profile="production">
+        <bean id="dbService" class="profiling.DbService">
+            <property name="db_url" value="production_db"></property>
+        </bean>
+    </beans>
+
+</beans>
