@@ -8,6 +8,7 @@ public class Bike implements Vehicle {
     public Bike() {
     }
 
+
     public Bike(String model, double price) {
         this.model = model;
         this.price = price;

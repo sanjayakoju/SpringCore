@@ -4,7 +4,7 @@
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
    <import resource="config1.xml"></import>
-    <bean id="game" class="model.Game" >
+    <bean id="game" class="model.Game"  init-method="init" destroy-method="destroy" scope="singleton" lazy-init="false">
 <!--        <constructor-arg ref="car"></constructor-arg>-->
         <constructor-arg ref="bike"></constructor-arg>
     </bean>

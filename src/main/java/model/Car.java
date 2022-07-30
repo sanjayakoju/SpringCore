@@ -1,7 +1,10 @@
 package model;
 
-public class Car implements Vehicle {
+import org.springframework.beans.factory.BeanNameAware;
 
+public class Car implements Vehicle, BeanNameAware {
+
+    private String setBeanName;
     private String model;
     private double price;
 
@@ -40,5 +43,10 @@ public class Car implements Vehicle {
                 "model='" + model + '\'' +
                 ", price=" + price +
                 '}';
+    }
+
+    @Override
+    public void setBeanName(String name) {
+        this.setBeanName = name;
     }
 }

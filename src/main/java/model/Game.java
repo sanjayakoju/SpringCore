@@ -7,8 +7,17 @@ public class Game {
     public Game() {
     }
 
+
     public Game(Vehicle vehicle) {
         this.vehicle = vehicle;
+    }
+
+    public void init() {
+        System.out.println("Init Method called");
+    }
+
+    public void destroy() {
+        System.out.println("XML - Bean Destroy");
     }
 
     public void play() {
