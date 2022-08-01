@@ -13,23 +13,32 @@ public class AspectLogger {
 
     public AspectLogger(){}
 
-    public AspectLogger(Logger logger) {
-        this.logger = logger;
+    @Pointcut("execution(* aop.EmailService.sendEmail(..))")
+    public void emailEmail() {
     }
 
-    @Before("execution(* aop.EmailService.*())")
+    @Pointcut("execution(* aop.EmailService.getEmail(..))")
+    public void getEmail() {
+    }
+    @Before("getEmail()")
     public void before(JoinPoint joinPoint) {
         System.out.println("Before : "+joinPoint.getSignature().getDeclaringTypeName()+" : "+joinPoint.getSignature().getName());
     }
 
-    @After("execution(* aop.EmailService.*(..))")
-    public void after(JoinPoint joinPoint) {
+    @After("emailEmail()")
+    public void after(JoinPoint joinPoint) throws Throwable {
         System.out.println("After : "+joinPoint.getSignature().getDeclaringTypeName()+" : "+joinPoint.getSignature().getName());
     }
 
-    @Pointcut("execution(* aop.EmailService.sendEmail(..))")
-    public void emailSend(){
 
-    }
+//    @Before("execution(* aop.EmailService.*())")
+//    public void before(JoinPoint joinPoint) {
+//        System.out.println("Before : "+joinPoint.getSignature().getDeclaringTypeName()+" : "+joinPoint.getSignature().getName());
+//    }
+//
+//    @After("execution(* aop.EmailService.*(..))")
+//    public void after(JoinPoint joinPoint) {
+//        System.out.println("After : "+joinPoint.getSignature().getDeclaringTypeName()+" : "+joinPoint.getSignature().getName());
+//    }
 
 }

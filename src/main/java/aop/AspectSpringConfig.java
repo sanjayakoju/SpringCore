@@ -9,12 +9,12 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 public class AspectSpringConfig {
 
     @Bean
-    public EmailService emailService() throws Exception {
+    public EmailService emailService() {
         return new EmailService();
     }
 
     @Bean
-    public AspectLogger logger() {
+    public AspectLogger aspectLogger() {
         return new AspectLogger();
     }
 }
