@@ -14,12 +14,14 @@ public class ProfileMain {
 
     private static void usingXML() {
 
-        GenericXmlApplicationContext springContext = new GenericXmlApplicationContext("profileConfig.xml");
+//        GenericXmlApplicationContext springContext = new GenericXmlApplicationContext("profileConfig.xml");
 
-//        GenericXmlApplicationContext springContext = new GenericXmlApplicationContext();
-        // For Seprate Config Calling
-//        springContext.load("configProd.xml");
-//        springContext.refresh();
+        GenericXmlApplicationContext springContext = new GenericXmlApplicationContext();
+//         For Seprate Config Calling
+        springContext.load("profileConfig.xml");
+//        springContext.getEnvironment().setActiveProfiles("production");
+        springContext.getEnvironment().setActiveProfiles("development");
+        springContext.refresh();
 
         DbService dbService = springContext.getBean(DbService.class);
         dbService.connect();
